@@ -1,6 +1,4 @@
 -- summed_area_table.adb
--- Implementation of the Summed Area Table variants.
-
 package body Summed_Area_Table is
 
    -- Helper: Safely get a value from a 2D SAT. Returns 0 if coordinates are out of bounds (before First).
@@ -35,6 +33,7 @@ package body Summed_Area_Table is
    -- Compute Standard 2D SAT
    ----------------------------------------------------------------------------
    procedure Compute_2D_SAT (Input : in Grid_2D; Output : out Grid_2D) is
+      pragma Warnings (Off, Output);
    begin
       Validate_Bounds_2D (Input, Output);
       for X in Input'Range(1) loop
@@ -51,6 +50,7 @@ package body Summed_Area_Table is
    -- Compute 2D SAT (Fast Cascaded method: Row prefix, then Col prefix)
    ----------------------------------------------------------------------------
    procedure Compute_2D_SAT_Fast (Input : in Grid_2D; Output : out Grid_2D) is
+      pragma Warnings (Off, Output);
       Row_Sum : Value_Type;
       Col_Sum : Value_Type;
    begin
@@ -78,6 +78,7 @@ package body Summed_Area_Table is
    -- Compute Higher-Order (Squared) 2D SAT
    ----------------------------------------------------------------------------
    procedure Compute_2D_Squared_SAT (Input : in Grid_2D; Output : out Grid_2D) is
+      pragma Warnings (Off, Output);
       Val : Value_Type;
    begin
       Validate_Bounds_2D (Input, Output);
@@ -117,6 +118,7 @@ package body Summed_Area_Table is
    -- Compute 3D SAT
    ----------------------------------------------------------------------------
    procedure Compute_3D_SAT (Input : in Grid_3D; Output : out Grid_3D) is
+      pragma Warnings (Off, Output);
    begin
       -- Verify bounds
       if Input'First(1) /= Output'First(1) or else Input'Last(1) /= Output'Last(1) or else
