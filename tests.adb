@@ -1,21 +1,22 @@
+-- tests.adb
 with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Assertions; use Ada.Assertions;
 with Summed_Area_Table; use Summed_Area_Table;
 
 procedure Tests is
-   Grid_In_2D : Grid_2D (1 .. 3, 1 .. 3) :=
+   Grid_In_2D : constant Grid_2D (1 .. 3, 1 .. 3) :=
      ((1, 2, 3),
       (4, 5, 6),
       (7, 8, 9));
    Grid_Out_2D : Grid_2D (1 .. 3, 1 .. 3);
    Grid_Out_2D_Fast : Grid_2D (1 .. 3, 1 .. 3);
    
-   Grid_In_3D : Grid_3D (1 .. 2, 1 .. 2, 1 .. 2) :=
+   Grid_In_3D : constant Grid_3D (1 .. 2, 1 .. 2, 1 .. 2) :=
      (((1, 1), (1, 1)),
       ((1, 1), (1, 1)));
    Grid_Out_3D : Grid_3D (1 .. 2, 1 .. 2, 1 .. 2);
 
-   Offset_Grid_In : Grid_2D (5 .. 6, 10 .. 11) :=
+   Offset_Grid_In : constant Grid_2D (5 .. 6, 10 .. 11) :=
      ((1, 2),
       (3, 4));
    Offset_Grid_Out : Grid_2D (5 .. 6, 10 .. 11);
